@@ -1,0 +1,74 @@
+﻿@model Proje1.DTOs.ActivityDto
+@{
+    ViewData["Title"] = "Add Activity";
+}
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<form asp-action="Add" class="container card p-2">
+           
+        <div class="form-group m-2">
+            <label>Activity Name:</label>
+            <input type="text" class="form-control" asp-for="Name">
+          </div>
+
+         <div class="d-flex justify-content-between mt-3 align-items-center">
+             <div class="form-group">
+                 <label>Activity Date:</label>
+                 <input type="date" class="form-control" asp-for="ActivityDate" />
+             </div>
+             <div class="form-group">
+                 <label>Closed Date:</label>
+                 <input type="date" class="form-control" asp-for="ClosedDate"/>
+             </div>
+             <div class="form-group">
+                 <label>Quata:</label>
+                 <input type="number" asp-for="Quota" class="form-control">
+             </div>
+
+             <div class="form-group" style="padding-right:10px!important;">
+                 <input type="checkbox" asp-for="IsTicked">
+                 <label>Activty Ticket:</label>
+             </div>
+        </div>
+
+         <div class="form-group mt-3">
+            <label>Description:</label>
+            <input type="text" class="form-control" asp-for="Description"/>
+        </div>
+
+        <div class="form-group mt-3">
+            <label> City:</label>
+            <select  asp-for="SelectedCity" class="form-select" aria-label="Default select example">
+            @foreach (var item in Model.Cities)
+            {
+                <option value="@item.CityID">@item.Name</option>
+            }
+            </select>
+        </div>
+
+         <div class="form-group mt-3">
+            <label> Category:</label>
+            <select  asp-for="SelectedCategory" class="form-select" aria-label="Default select example">
+            @foreach (var item in Model.Categories)
+            {
+                <option value="@item.CategoryID">@item.Name</option>
+            }
+            </select>
+        </div>
+        
+        <div class="form-group mt-3">
+            <label>Address:</label>
+            <textarea class="form-control" asp-for="Address" placeholder="Address..."></textarea>
+        </div>
+        
+
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+       
+    </form>

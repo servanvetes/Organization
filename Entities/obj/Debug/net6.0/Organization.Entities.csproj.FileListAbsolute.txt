@@ -1,0 +1,14 @@
+C:\Users\SERWAN\source\repos\Proje1\Entities\bin\Debug\net6.0\Organization.Entities.deps.json
+C:\Users\SERWAN\source\repos\Proje1\Entities\bin\Debug\net6.0\Organization.Entities.runtimeconfig.json
+C:\Users\SERWAN\source\repos\Proje1\Entities\bin\Debug\net6.0\Organization.Entities.dll
+C:\Users\SERWAN\source\repos\Proje1\Entities\bin\Debug\net6.0\ref\Organization.Entities.dll
+C:\Users\SERWAN\source\repos\Proje1\Entities\bin\Debug\net6.0\Organization.Entities.pdb
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.csproj.AssemblyReference.cache
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.AssemblyInfoInputs.cache
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.AssemblyInfo.cs
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.csproj.CoreCompileInputs.cache
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.dll
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\ref\Organization.Entities.dll
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.pdb
+C:\Users\SERWAN\source\repos\Proje1\Entities\obj\Debug\net6.0\Organization.Entities.genruntimeconfig.cache

@@ -1,0 +1,35 @@
+﻿@model List<Proje1.DTOs.ActivitiesDto>
+@{
+    ViewData["Title"] = "List Activities";
+}
+ 
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+
+                <div class="card-header">
+                    @item.Name
+                </div>
+                <div class="card-body">
+                    @*<h5 class="card-title">@item.Description</h5>*@
+                    <p class="card-text">@item.Description</p>
+                    <p>Happened Date : <span>@item.ActivityDate</span></p>
+                    <p>Closed Date: <span>@item.ClosedDate</span></p>
+                    <p>City: <span>@item.CityName</span></p>
+                    <p class="card-text">@item.Address</p>
+                    <p>Category: <span>@item.CategoryName</span></p>
+                    <p>Quota: <span>@item.Quota</span></p>
+                    <p class="card-text">@item.IsTicked</p>
+                    @*   <a href="#" class="btn btn-primary">Join</a>
+                        <button type="submit" value="Login" class="btn btn-primary" /><i class="fa-solid fa-right-to-bracket me-2"></i>Login</button>*@
+                    @* asp-route-id="/@item.ActivityID"*@
+                    <a class="btn btn-primary" asp-action="List" asp-route-cityID="@item.ActivityID">Join</a>
+
+                    @* <a class="btn btn-primary" asp-action="List" asp-route-cityID="@item.ActivityID" asp-route-categoryID="@item.ActivityID">Join</a>*@
+                </div>
+            </div>
+        }
+    </div>
+</div>

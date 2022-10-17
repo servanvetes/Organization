@@ -1,0 +1,32 @@
+﻿@model List<Proje1.DTOs.CityDto>
+
+@{
+    ViewData["Title"] = "List Cities";
+
+}
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="mt-5 mb-5">
+    <div class="d-flex justify-content-end mb-5">
+        <span><a class="btn btn-primary" asp-action="AddCity">Add New City</a></span>
+    </div>
+    <ul class="list-group">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between">
+                <span>@item.Name</span>
+                <div>
+                    <input type="hidden" value="@item.CityID" />
+                    <span><a class="btn btn-primary" style="background-color:green; border:none" asp-action="UpdateCity" asp-route-CityID="@item.CityID">Update</a></span>
+                    <span><a class="btn btn-primary" style="background-color:red; border:none" asp-action="RemoveCity" asp-route-CityID="@item.CityID">Remove</a></span>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,32 @@
+﻿@model List<Proje1.DTOs.CategoryDto>
+
+@{
+    ViewData["Title"] = "List Categories";
+
+}
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="mt-5 mb-5">
+    <div class="d-flex justify-content-end mb-5">
+        <span><a class="btn btn-primary" asp-action="AddCategory">Add New Category</a></span>
+    </div>
+    <ul class="list-group">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between">
+                <span>@item.Name</span>
+                <div>
+                    <input type="hidden" value="@item.CategoryID" />
+                    <span><a class="btn btn-primary" style="background-color:green; border:none" asp-action="UpdateCategory" asp-route-CategoryID="@item.CategoryID">Update</a></span>
+                    <span><a class="btn btn-primary" style="background-color:red; border:none" asp-action="RemoveCategory" asp-route-CategoryID="@item.CategoryID">Remove</a></span>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
