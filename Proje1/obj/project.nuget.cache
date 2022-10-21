@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cAQPJrdKiTY0h52tVkKFqZOCJ1F+wwcYIaA7Uxe/JcMRCrNGE7msZJhy6Po6DkbfPx/BQuRiGTEj+o4hqg5wbQ==",
+  "dgSpecHash": "xrhN0CTfI6QB+Ac3ou765wW2UO7h0znrQCwRWkEwtFllL6CFwn20v4bCvfb02kPtqU+mItYiVTsljqyXwwhR5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\SERWAN\\source\\repos\\Organization\\Proje1\\Organization.App.csproj",
   "expectedPackageFiles": [
@@ -11,9 +11,12 @@
     "C:\\Users\\SERWAN\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.10\\microsoft.aspnetcore.mvc.razor.extensions.6.0.10.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.10.nupkg.sha512",
+    "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.10\\microsoft.aspnetcore.razor.language.6.0.10.nupkg.sha512",
+    "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",
     "C:\\Users\\SERWAN\\.nuget\\packages\\microsoft.build.framework\\17.0.0\\microsoft.build.framework.17.0.0.nupkg.sha512",

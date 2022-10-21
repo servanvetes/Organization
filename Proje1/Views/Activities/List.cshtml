@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "List Activities";
 }
- 
+
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
@@ -22,12 +22,10 @@
                     <p>Category: <span>@item.CategoryName</span></p>
                     <p>Quota: <span>@item.Quota</span></p>
                     <p class="card-text">@item.IsTicked</p>
-                    @*   <a href="#" class="btn btn-primary">Join</a>
-                        <button type="submit" value="Login" class="btn btn-primary" /><i class="fa-solid fa-right-to-bracket me-2"></i>Login</button>*@
-                    @* asp-route-id="/@item.ActivityID"*@
-                    <a class="btn btn-primary" asp-action="List" asp-route-cityID="@item.ActivityID">Join</a>
-
-                    @* <a class="btn btn-primary" asp-action="List" asp-route-cityID="@item.ActivityID" asp-route-categoryID="@item.ActivityID">Join</a>*@
+                    <form asp-controller="Ticket" asp-action="Buy" method="post">
+                        <input name="ActivityID" value="@item.ActivityID" hidden />
+                        <button type="submit" class="btn btn-success" name="@item.ActivityID" value="@item.ActivityID">Join</button>
+                    </form>
                 </div>
             </div>
         }

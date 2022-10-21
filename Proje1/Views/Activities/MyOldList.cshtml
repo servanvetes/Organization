@@ -1,0 +1,29 @@
+﻿@model List<Proje1.DTOs.ActivitiesDto>
+@{
+    ViewData["Title"] = "My Old Activities";
+}
+ 
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+
+                <div class="card-header">
+                    @item.Name
+                </div>
+                <div class="card-body">
+                    <p class="card-text">@item.Description</p>
+                    <p>Happened Date : <span>@item.ActivityDate</span></p>
+                    <p>Closed Date: <span>@item.ClosedDate</span></p>
+                    <p>City: <span>@item.CityName</span></p>
+                    <p class="card-text">@item.Address</p>
+                    <p>Category: <span>@item.CategoryName</span></p>
+                    <p>Quota: <span>@item.Quota</span></p>
+                    <p class="card-text">@item.IsTicked</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

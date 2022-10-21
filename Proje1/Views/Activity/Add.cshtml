@@ -10,35 +10,40 @@
 </div>
 
 <form asp-action="Add" class="container card p-2">
-           
+           <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group m-2">
             <label>Activity Name:</label>
-            <input type="text" class="form-control" asp-for="Name">
+            <input type="text" class="form-control" asp-for="Name" autocomplete="off">
+            <span asp-validation-for="Name" class="text-danger"></span>
           </div>
 
          <div class="d-flex justify-content-between mt-3 align-items-center">
              <div class="form-group">
                  <label>Activity Date:</label>
                  <input type="date" class="form-control" asp-for="ActivityDate" />
+                  <span asp-validation-for="ActivityDate" class="text-danger"></span>
              </div>
              <div class="form-group">
                  <label>Closed Date:</label>
                  <input type="date" class="form-control" asp-for="ClosedDate"/>
+                  <span asp-validation-for="ClosedDate" class="text-danger"></span>
              </div>
              <div class="form-group">
                  <label>Quata:</label>
                  <input type="number" asp-for="Quota" class="form-control">
+                  <span asp-validation-for="Quota" class="text-danger"></span>
              </div>
 
              <div class="form-group" style="padding-right:10px!important;">
-                 <input type="checkbox" asp-for="IsTicked">
-                 <label>Activty Ticket:</label>
+                 <input type="checkbox" asp-for="IsTicked" checked onclick="return false;">
+                 <label>Ticketed:</label>
              </div>
         </div>
 
          <div class="form-group mt-3">
             <label>Description:</label>
-            <input type="text" class="form-control" asp-for="Description"/>
+            <input type="text" class="form-control" asp-for="Description" autocomplete="off"/>
+             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="form-group mt-3">
@@ -63,7 +68,8 @@
         
         <div class="form-group mt-3">
             <label>Address:</label>
-            <textarea class="form-control" asp-for="Address" placeholder="Address..."></textarea>
+            <textarea class="form-control" asp-for="Address" placeholder="Address..." autocomplete="off"></textarea>
+             <span asp-validation-for="Address" class="text-danger"></span>
         </div>
         
 
@@ -72,3 +78,11 @@
         </div>
        
     </form>
+
+
+
+    @section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

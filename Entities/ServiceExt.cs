@@ -16,14 +16,16 @@ namespace Entities
     {
         public static void AddSubService(this IServiceCollection service, IConfiguration configuration)
         {
-           
-            service.AddDbContext<OrganizationContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Dbsql")));
-           // (Configuration.GetConnectionString("DatabaseConnection")))
+
+            service.AddDbContext<OrganizationContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DbMssql")));
             service.AddScoped<IUserRepository, UserRepository>();
             service.AddScoped<IActivityRepository, ActivityRepository>();
             service.AddScoped<ICategoryRepository, CategoryRepository>();
             service.AddScoped<ICityRepository, CityRepository>();
-            // return service;
+            service.AddScoped<ICityRepository, CityRepository>();
+            service.AddScoped<ITicketCompanyRepository, TicketCompanyRepository>();
+            service.AddScoped<IUserActivityRepository, UserActivityRepository>();
+
         }
     }
 }

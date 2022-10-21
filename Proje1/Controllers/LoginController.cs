@@ -34,6 +34,7 @@ namespace Proje1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LoginAsync(LoginDto loginDto)
         {
             User user = _userRepository.FirstOrDefault(x => x.Email.Equals(loginDto.Email) && x.Password.Equals(loginDto.Password));
