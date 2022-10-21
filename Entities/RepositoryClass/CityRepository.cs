@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.RepositoryClass
 {
-    public class CityRepository: GenericRepository<City>, ICityRepository
+    internal class CityRepository: GenericRepository<City>, ICityRepository
     {
         public CityRepository(OrganizationContext context) : base(context)
         {

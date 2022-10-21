@@ -15,7 +15,22 @@
       "ProjectGuid": "2c8fc178-1cb0-45df-8585-0145676ad4eb",
       "DisplayName": "Organization.Entities",
       "ColorIndex": 1
+    },
+    "f4362c6e-9ceb-4293-8291-e9d396afce63": {
+      "ProjectGuid": "f4362c6e-9ceb-4293-8291-e9d396afce63",
+      "DisplayName": "Organization.WebApi",
+      "ColorIndex": 2
+    },
+    "049516aa-3812-464b-b6ee-88a379986675": {
+      "ProjectGuid": "049516aa-3812-464b-b6ee-88a379986675",
+      "DisplayName": "WebApplication1",
+      "ColorIndex": 3
+    },
+    "f8777d78-6fbe-43d3-9301-4fa72a491c4c": {
+      "ProjectGuid": "f8777d78-6fbe-43d3-9301-4fa72a491c4c",
+      "DisplayName": "Organization.WebApi",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 5
 }

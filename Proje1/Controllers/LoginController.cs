@@ -1,5 +1,7 @@
 ﻿using Entities;
 using Entities.Models;
+using Entities.Repository;
+using Entities.RepositoryClass;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -15,14 +17,16 @@ namespace Proje1.Controllers
     {
         private readonly IUserRepository _userRepository;
 
-        public LoginController(IUserRepository userRepository)
+
+        public LoginController(IUserRepository userRepository )
         {
             _userRepository = userRepository;
         }
 
         [HttpGet]
         public IActionResult Login()
-        {
+        {        
+
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
@@ -34,6 +38,7 @@ namespace Proje1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LoginAsync(LoginDto loginDto)
         {
             User user = _userRepository.FirstOrDefault(x => x.Email.Equals(loginDto.Email) && x.Password.Equals(loginDto.Password));

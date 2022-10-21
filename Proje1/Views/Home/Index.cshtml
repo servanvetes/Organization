@@ -1,4 +1,4 @@
-﻿@model Proje1.DTOs.HomeViewModel
+﻿@*@model Organization.App.DTOs.TicketActivityDto*@
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,130 +7,81 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+   @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
 
 </div>
+
+
+
+
+
+
 @*
-<form asp-action="Index" class="container card p-2">
-           
-        <div class="form-group m-2">
-            <label>Etkinlik Adı:</label>
-            <input type="text" class="form-control" asp-for="ActivityName">
-          </div>
-
-         <div class="d-flex justify-content-between mt-3 align-items-center">
-             <div class="form-group">
-                 <label>Etkinlik tarihi:</label>
-                 <input type="date" class="form-control" asp-for="ActivityDate" />
-             </div>
-             <div class="form-group">
-                 <label>Kapatılma tarihi:</label>
-                 <input type="date" class="form-control" asp-for="ClosedDate"/>
-             </div>
-             <div class="form-group">
-                 <label>Kontenjan:</label>
-                 <input type="number" asp-for="Limit" class="form-control">
-             </div>
-
-             <div class="form-group" style="padding-right:10px!important;">
-                 <input type="checkbox" asp-for="IsTicked">
-                 <label>Activite Biletli:</label>
-             </div>
-        </div>
-
-         <div class="form-group mt-3">
-            <label>Açıklama:</label>
-            <input type="text" class="form-control" asp-for="ActivityDescription"/>
-        </div>
-
-        <div class="form-group mt-3">
-            <label> Şehir:</label>
-            <select  asp-for="SelectedSehir" class="form-select" aria-label="Default select example">
-            @foreach (var item in Model.Sehirler)
-            {
-                <option value="@item.Id">@item.Ad</option>
-            }
-            </select>
-        </div>
-        
-        <div class="form-group mt-3">
-            <label>Adres:</label>
-            <textarea class="form-control" asp-for="ActivityAdres" placeholder="Adres..."></textarea>
-        </div>
-        
-
-        <div class="d-flex justify-content-end mt-3">
-            <button class="btn btn-primary" type="submit">Kaydeta</button>
-        </div>
-       
-    </form>
-
-
     <form class="mt-4 mb-4">
-        <div class="form-group mt-2 mb-2">
-            <label>Search</label>
-            <input type="text" class="form-control" />
-        </div>
+    <div class="form-group mt-2 mb-2">
+    <label>Search</label>
+    <input type="text" class="form-control" />
+    </div>
 
-        <div class="form-group mt-2 mb-2">
-            <label> Şehir:</label>
-            <select  asp-for="SelectedSehir" class="form-select" aria-label="Default select example">
-                <option value="0">Tümü</option>
-                @foreach (var item in Model.Sehirler)
-                {
-                    <option value="@item.Id">@item.Ad</option>
-                }
-            </select>
-        </div>
+    <div class="form-group mt-2 mb-2">
+    <label> Şehir:</label>
+    <select  asp-for="SelectedSehir" class="form-select" aria-label="Default select example">
+    <option value="0">Tümü</option>
+    @foreach (var item in Model.Sehirler)
+    {
+    <option value="@item.Id">@item.Ad</option>
+    }
+    </select>
+    </div>
 
-        <button>Filtrele</button>
+    <button>Filtrele</button>
     </form>
 
     <div class="container">
-        <div class="row">
-             @for (var i = 0; i <15; i++)
-               {
-                   <div class="card col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+    <div class="row">
+    @for (var i = 0; i <15; i++)
+    {
+    <div class="card col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
 
-                      <div class="card-header">
-                        item.Name
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">İtem.title</h5>
-                        <p class="card-text">item.description</p>
-                        <p>Etkinlik Tarihi: <span>item.startdate</span></p>
-                        <p>Etkinlik Bitiş Tarihi: <span>item.enddate</span></p>
-                        <a href="#" class="btn btn-primary">Bieltlimi Linki</a>
-                      </div>
-                    </div>
-                }
-        </div>
+    <div class="card-header">
+    item.Name
+    </div>
+    <div class="card-body">
+    <h5 class="card-title">İtem.title</h5>
+    <p class="card-text">item.description</p>
+    <p>Etkinlik Tarihi: <span>item.startdate</span></p>
+    <p>Etkinlik Bitiş Tarihi: <span>item.enddate</span></p>
+    <a href="#" class="btn btn-primary">Bieltlimi Linki</a>
+    </div>
+    </div>
+    }
+    </div>
     </div>
 
 
-   <div class="mt-5 mb-5">
-       <div class="d-flex justify-content-end">
-           <a href="" class="btn btn-success">Yeni Ekle</a>
-       </div>
-        <ul class="list-group">
-            @for (var i = 0; i < 10; i++)
-            {
-                <li class="list-group-item d-flex justify-content-between">
-                      <span>Komedi</span>
-                      <div>
-                          <span><a href="/duzenle/">Düzenle</a></span>
-                          <span><a href="#">Sil</a></span>
-                      </div>
-                 </li>
-            }
-        </ul>
-   </div>
+    <div class="mt-5 mb-5">
+    <div class="d-flex justify-content-end">
+    <a href="" class="btn btn-success">Yeni Ekle</a>
+    </div>
+    <ul class="list-group">
+    @for (var i = 0; i < 10; i++)
+    {
+    <li class="list-group-item d-flex justify-content-between">
+    <span>Komedi</span>
+    <div>
+    <span><a href="/duzenle/">Düzenle</a></span>
+    <span><a href="#">Sil</a></span>
+    </div>
+    </li>
+    }
+    </ul>
+    </div>
 
-   <form asp-action="duzenle/2">
+    <form asp-action="duzenle/2">
 
-       <input type="hidden" value="Model.id"/>
-       <input type="text" value="Model.name"/>
+    <input type="hidden" value="Model.id"/>
+    <input type="text" value="Model.name"/>
 
-       <button type="submit">Düzenle</button>
-   </form>
+    <button type="submit">Düzenle</button>
+    </form>
 *@

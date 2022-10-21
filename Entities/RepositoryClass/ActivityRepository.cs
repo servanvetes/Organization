@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.RepositoryClass
 {
-    public class ActivityRepository: GenericRepository<Activity>, IActivityRepository
+    internal class ActivityRepository: GenericRepository<Activity>, IActivityRepository
     {
         public ActivityRepository(OrganizationContext context) : base(context)
         {

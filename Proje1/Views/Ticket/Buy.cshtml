@@ -1,0 +1,75 @@
+﻿@model Organization.App.DTOs.TicketActivityDto
+
+@{
+    ViewData["Title"] = "Join Activity";
+}
+
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+<br />
+<br />
+
+
+<div class="container card p-2">
+
+
+    @*<form asp-action="Index" class="container card p-2">*@
+
+    <div class="form-group m-2">
+        <label>Activity Name:</label>
+        <input type="text" class="form-control" asp-for="ActivityName" readonly="@(true)">
+    </div>
+    <form  asp-action="CompanyProcessing" method="post">
+        <input type="hidden" class="form-control" asp-for="ActivityID" />
+
+        <div class="form-group mt-3">
+            <label> Ticket Companies:</label>
+            <select asp-for="SelectedCompany" class="form-select" aria-label="Default select example">
+                @foreach (var item in Model.TicketCompanies)
+                {
+                    <option value="@item.CompanyId">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary" type="submit">Buy Ticket</button>
+        </div>
+    </form>
+    @* </form>*@
+</div>
+@*
+    <form asp-controller="Ticket" asp-action="Buy" method="post">
+    <input name="ActivityID" value="@item.ActivityID" hidden />
+    <button type="submit" class="btn btn-success" name="@item.ActivityID" value="@item.ActivityID">Join</button>
+    </form>*@
+
+
+
+@*    <div class="d-flex justify-content-between mt-3 align-items-center">
+    <div class="form-group">
+    <label>Etkinlik tarihi:</label>
+    <input type="date" class="form-control" asp-for="ActivityDate" />
+    </div>*@
+@*  <div class="form-group">
+    <label>Kapatılma tarihi:</label>
+    <input type="date" class="form-control" asp-for="ClosedDate"/>
+    </div>
+    <div class="form-group">
+    <label>Kontenjan:</label>
+    <input type="number" asp-for="Limit" class="form-control">
+    </div>
+
+    <div class="form-group" style="padding-right:10px!important;">
+    <input type="checkbox" asp-for="IsTicked">
+    <label>Activite Biletli:</label>
+    </div>*@
+@*</div>*@
+
+@*     <div class="form-group mt-3">
+    <label>Açıklama:</label>
+    <input type="text" class="form-control" asp-for="ActivityDescription"/>
+    </div>*@

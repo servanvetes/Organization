@@ -9,5 +9,6 @@ namespace Entities.Repository
 {
     public interface ICategoryRepository: IGenericRepository<Category>
     {
+
     }
 }

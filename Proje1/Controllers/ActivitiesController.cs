@@ -33,13 +33,14 @@ namespace Proje1.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = nameof(Roles.User))]
         public IActionResult MyOldList()
         {
-
             return View(ActivityTypes(ActivityStates.MyOld));
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult AllList()
         {
 
@@ -57,38 +58,21 @@ namespace Proje1.Controllers
                 case ActivityStates.MyAct:
 
                     loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
-                    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId == (x.UserActivities.Where(a => a.UserId != loginUserID).Select(z => z.ActivityId).First()));
+                    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId == (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()) && x.HappenedDate.Date >= DateTime.Now.Date);
                     break;
                 case ActivityStates.WithoutMyAct:
                     loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
-                    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId != (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()));
+                    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId != (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()) && x.HappenedDate.Date >= DateTime.Now.Date);
                     break;
                 case ActivityStates.MyOld:
-                    ActivityQuery = _activityRepository.GetAllQuery();
+                    loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
+                    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId == (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()) && x.HappenedDate.Date < DateTime.Now.Date);
                     break;
                 case ActivityStates.AllAct:
                     ActivityQuery = _activityRepository.GetAllQuery();
                     break;
-                    //default:
-                    //    favoriteTask = "Watching TV";
-                    //    break;
+
             }
-
-
-            //if (activityStates.Equals(ActivityStates.MyAct))
-            //{
-            //    int loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
-            //    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId == (x.UserActivities.Where(a => a.UserId != loginUserID).Select(z => z.ActivityId).First()));
-            //}
-            //else if (activityStates.Equals(ActivityStates.WithoutMyAct))
-            //{
-            //    int loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
-            //    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId != (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()));
-            //}
-            //else if (activityStates.Equals(ActivityStates.AllAct))
-            //{
-            //    ActivityQuery = _activityRepository.GetAllQuery();
-            //}
             activities = ActivityQuery.Select(x => new ActivitiesDto
             {
 
@@ -104,10 +88,10 @@ namespace Proje1.Controllers
                 IsTicked = (x.IsTicketed ? "Ticketed" : "Ticketless"),
             }).ToList();
             return activities;
+
+
         }
     }
-
-    // MyOldList
     enum ActivityStates
     {
         WithoutMyAct = 0,
@@ -116,3 +100,27 @@ namespace Proje1.Controllers
         AllAct = 3
     }
 }
+
+
+
+
+
+#region eski kodlar
+// int loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
+//ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId != (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()));
+
+//if (activityStates.Equals(ActivityStates.MyAct))
+//{
+//    int loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
+//    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId == (x.UserActivities.Where(a => a.UserId != loginUserID).Select(z => z.ActivityId).First()));
+//}
+//else if (activityStates.Equals(ActivityStates.WithoutMyAct))
+//{
+//    int loginUserID = Convert.ToInt32((User.FindFirst(ClaimTypes.NameIdentifier).Value));
+//    ActivityQuery = _activityRepository.GetWhere(x => x.ActivityId != (x.UserActivities.Where(a => a.UserId == loginUserID).Select(z => z.ActivityId).First()));
+//}
+//else if (activityStates.Equals(ActivityStates.AllAct))
+//{
+//    ActivityQuery = _activityRepository.GetAllQuery();
+//}
+#endregion

@@ -32,6 +32,7 @@ namespace Proje1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(UserDto userDto)
         {
             if (!ModelState.IsValid)

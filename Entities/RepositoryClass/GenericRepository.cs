@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    internal class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly OrganizationContext dbContext;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.RepositoryClass
 {
-    public class TicketCompanyRepository: GenericRepository<TicketCompany>, ITicketCompany
+    internal class TicketCompanyRepository: GenericRepository<TicketCompany>, ITicketCompanyRepository
     {
         public TicketCompanyRepository(OrganizationContext context) : base(context)
         {
