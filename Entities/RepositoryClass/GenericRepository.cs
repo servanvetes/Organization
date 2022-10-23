@@ -65,40 +65,9 @@ namespace Entities.Repository
 
         IQueryable<T> IGenericRepository<T>.GetWhere(Expression<Func<T, bool>>? predicate)
         {
-            return _entity.Where(predicate); ;
+            return _entity.Where(predicate); 
         }
         ///
-        public Task AddRangeAsync(IEnumerable<T> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<T>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ValueTask<T> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        public void RemoveRange(IEnumerable<T> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
      
     }
