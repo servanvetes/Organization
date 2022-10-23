@@ -25,3 +25,4 @@ C:\Users\SERWAN\source\repos\Organization\Entities\obj\Debug\net6.0\Organization
 C:\Users\SERWAN\source\repos\Organization\Entities\obj\Debug\net6.0\ref\Organization.Entities.dll
 C:\Users\SERWAN\source\repos\Organization\Entities\obj\Debug\net6.0\Organization.Entities.pdb
 C:\Users\SERWAN\source\repos\Organization\Entities\obj\Debug\net6.0\Organization.Entities.genruntimeconfig.cache
+C:\Users\SERWAN\source\repos\Organization\Entities\obj\Debug\net6.0\Organization.Entities.csproj.AssemblyReference.cache
