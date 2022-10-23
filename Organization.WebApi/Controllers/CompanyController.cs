@@ -27,7 +27,7 @@ namespace Organization.WebApi.Controllers
         [HttpPost]
         public IActionResult AddCompany(AddCompanyDto AddcompanyDto)
         {
-           
+
             // var identity = HttpContext.User.Identity as ClaimsIdentity;
             try
             {

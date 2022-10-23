@@ -22,9 +22,7 @@ namespace Entities
             service.AddScoped<IActivityRepository, ActivityRepository>();
             service.AddScoped<ICategoryRepository, CategoryRepository>();
             service.AddScoped<ICityRepository, CityRepository>();
-            service.AddScoped<ICityRepository, CityRepository>();
-            service.AddScoped<ITicketCompanyRepository, TicketCompanyRepository>();
-            service.AddScoped<IUserActivityRepository, UserActivityRepository>();
+            // return service;
         }
     }
 }

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace Entities.RepositoryClass
 {
-    internal class UserActivityRepository : GenericRepository<UserActivity>, IUserActivityRepository
     {
         public UserActivityRepository(OrganizationContext context) : base(context)
         {
