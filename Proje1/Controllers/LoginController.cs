@@ -46,7 +46,8 @@ namespace Proje1.Controllers
             if (user == null)
             {
                 ModelState.AddModelError("", "Please check your user information.");
-                return View(loginDto);
+                return View(loginDto); 
+
             }
             else
             {
